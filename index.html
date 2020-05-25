@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function Expressions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"/>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="" class="site-header__logo"
+        ><img src="assets/logo-header.svg" alt="MDN logo"
+      /></a>
+      <nav class="site-header__nav">
+        <ul class="site-header__nav__ul">
+          <li class="site-header__nav__ul__items">Technologies <span class="drop-down">&#9660;</span></li>
+          <li class="site-header__nav__ul__items">References &amp; Guides <span class="drop-down">&#9660;</span></li>
+          <li class="site-header__nav__ul__items">Feedback <span class="drop-down">&#9660;</span></li>
+        </ul>
+      </nav>
+      <form class="site-header__nav-search">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 26 28" 
+          aria-hidden="true" 
+          class="site-header__nav-search__icon">
+          <path 
+            d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 
+            7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 01-1.406-.594l-5.359-5.344a10.971 
+            10.971 0 01-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 
+            4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z">
+          </path>
+        </svg>
+        <label class="site-header__nav-search__label" for="search">Search MDN</label>
+        <input name="search" id="search" class="site-header__nav-search__input" type="text" placeholder="Search MDN">
+        <input type="button" class="site-header__nav-search__button" value="Go">
+      </form>
+      <nav class="site-header__sign-in">
+        <a href="#0">Sign in</a>
+      </nav>
+    </header>
+
+    <main id="main-doc">
+      <header class="main-header">
+        <div class="small-wrapper--header">
+          <h1 class="main-header__headline">Arrow function expressions</h1>
+        </div>
+        <div class="small-wrapper--body">
+          <div class="helper-wrapper">
+            <a href="" class="main-header__breadcrumb-mobile">
+              See Functions
+            </a>
+            <nav class="main-header__languange-picker">
+              English <span class="drop-down">&#9660;</span>
+              <ul class="main-header__language-picker__ul">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+              </ul>
+            </nav>
+          </div>
+          <nav class="main-header__breadcrumb">
+            <ul class="main-header__breadcrumb__ul">
+              <li class="main-header__breadcrumb__ul__items">
+                Web technology for developers<span class="arrow"></span>
+              </li>
+              <li class="main-header__breadcrumb__ul__items">
+                Javascript<span class="arrow"></span>
+              </li>
+              <li class="main-header__breadcrumb__ul__items">
+                Javascript reference<span class="arrow"></span>
+              </li>
+              <li class="main-header__breadcrumb__ul__items">
+                Functions<span class="arrow"></span>
+              </li>
+              <li
+                class="main-header__breadcrumb__ul__items main-header__breadcrumb__ul__items--selected"
+              >
+                Arrow function expressions
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="big-wrapper">
+        <div class="fixed-nav-header-mobile">
+          <div class="fixed_nav__mobile">
+            Jump to section<span class="drop-down drop-down--big">&#9660;</span>
+          </div>
+          <nav class="fixed-nav" id="navbar">
+            <header class="fixed-nav__header">
+              <p class="fixed-nav__header__parag">On this page</p>
+            </header>
+            <ul class="fixed-nav__ul" style="display: none;">
+              <li class="fixed-nav__ul__items">
+                <a href="#Syntax" class="nav-link">Syntax</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Description" class="nav-link">Description</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Function_body" class="nav-link">Function body</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Returning_object_literals" class="nav-link"
+                  >Returning object literals</a
+                >
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Line_breaks" class="nav-link">Line breaks</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Parsing_order" class="nav-link">Parsing order</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#More_examples" class="nav-link">More examples</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Specifications" class="nav-link">Specifications</a>
+              </li>
+              <li class="fixed-nav__ul__items">
+                <a href="#Browser_Compatibility" class="nav-link"
+                  >Browser Compatibility</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <section class="intro-section">
+            <p>
+              An <strong>arrow function expression</strong> is a syntactically
+              compact alternative to a regular <a href="#0">function expression</a>,
+              although without its own bindings to the <a href="">this</a>,
+              <a href="">arguments</a>, <a href="">super</a>, or
+              <a href="">new.target</a> keywords. Arrow function expressions are ill
+              suited as methods, and they cannot be used as constructors.
+            </p>
+          <div class="intro-section__code-playground">
+            <p class="intro-section__code-playground__headline">
+              JavaScript Demo: Functions =>
+            </p>
+            <div class="intro-section__code-playground__code">
+              <div class="intro-section__code-playground__code__gutter">
+                <span class="intro-section__code-playground__code__gutter__number">1</span>
+                <span class="intro-section__code-playground__code__gutter__number">2</span>
+                <span class="intro-section__code-playground__code__gutter__number">3</span>
+              </div>
+              <textarea class="intro-section__code-playground__code__input">.linkedin {
+      is: cool;
+  }
+              </textarea>
+            </div>
+            <div class="intro-section__code-playground__output">
+              <div class="intro-section__code-playground__output__control-button">
+                <a href="#0">Run ></a>
+                <a href="#0">Reset </a>
+              </div>
+              <div class="intro-section__code-playground__output__terminal"></div>
+            </div>
+          </div>
+        </section>
+        <section class="main-section" id="Syntax">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Syntax</h2>
+          </header>
+          <h3 class="main-section__headline">Basic Syntax</h3>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code">
+              (param1, param2, …, paramN) => { statements } (param1, param2, …,
+              paramN) => expression // equivalent to: => { return expression; }
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              //Parentheses are optional when there's only one parameter name:
+              (singleParam) => { statements } singleParam => { statements }
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // The parameter list for a function with no parameters should be written
+              with a pair of parentheses. () => { statements }
+            </p> 
+          </code>
+          <h3 class="main-section__headline">Advanced Syntax</h3>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code">
+              // Parenthesize the body of a function to return an object literal
+              expression: params => ({foo: bar}) 
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // Rest parameters and default parameters are supported 
+              (param1, param2, ...rest) => { statements }
+              (param1 = defaultValue1, param2, …, paramN = defaultValueN) => {
+              statements } 
+            </p>
+            <p class="main-section__parag--code__sub-code">
+            // Destructuring within the parameter list is also
+            supported var f = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;
+            f(); // 6
+            </p>
+            </code>
+        </section>
+        <section class="main-section" id="Description">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Description</h2>
+          </header>
+          <p class="main-section__parag">
+            See also "ES6 In Depth: Arrow functions" on hacks.mozilla.org.
+          </p>
+          <p class="main-section__parag">
+            Two factors influenced the introduction of arrow functions: the need for
+            shorter functions and the behavior of the this keyword.
+          </p>
+          <h3 class="main-section__headline">Shorter functions</h3>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code">
+              var elements = [ 'Hydrogen', 'Helium', 'Lithium', 'Beryllium' ];
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // This statement returns the array: [8, 6, 7, 9]
+              elements.map(function(element) { return element.length; }); 
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // The regular function above can be written as the arrow function below
+              elements.map((element) => { return element.length; }); // [8, 6, 7, 9]
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // When there is only one parameter, we can remove the surrounding
+              parentheses elements.map(element => { return element.length; }); //
+              [8, 6, 7, 9] 
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // When the only statement in an arrow function is
+              `return`, we can remove `return` and remove // the surrounding curly
+              brackets elements.map(element => element.length); // [8, 6, 7, 9] 
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              //In this case, because we only need the length property, we can use
+              destructuring parameter: // Notice that the `length` corresponds to
+              the property we want to get whereas the // obviously non-special
+              `lengthFooBArX` is just the name of a variable which can be changed //
+              to any valid variable name you want elements.map(({ length:
+              lengthFooBArX }) => lengthFooBArX); // [8, 6, 7, 9] 
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--longest">
+              // This destructuring parameter assignment can also be written as seen below.
+              However, note that in // this example we are not assigning `length`
+              value to the made up property. Instead, the literal name // itself of
+              the variable `length` is used as the property we want to retrieve from
+              the object. elements.map(({ length }) => length); // [8, 6, 7, 9]
+            </p> 
+            </code>
+          <h3 class="main-section__headline">
+            No separate <span class="highlight">this</span>
+          </h3>
+          <p class="main-section__parag">
+            Before arrow functions, every new function defined its own this value
+            based on how the function was called: 
+          </p>
+          <ul class="main-section__parag__list">
+            <li class="main-section__parag__list__items">
+              A new object in the case of a
+              constructor. etc.
+            </li>
+            <li class="main-section__parag__list__items">undefined in strict mode function calls.</li>
+            <li class="main-section__parag__list__items">The base object
+              if the function was called as an "object method".</li>
+            <li class="main-section__parag__list__items">
+              etc.
+            </li>
+          </ul>
+          <p class="main-section__parag">
+            This proved to be less than ideal with an object-oriented style of programming.
+          </p>
+  
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              function Person() {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin 
+            main-section__parag--code__sub-code--indent">
+              // The Person() constructor defines `this` as an
+              instance of itself.
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent">
+              this.age = 0;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent
+            main-section__parag--code__sub-code--no-margin">
+              setInterval(function growUp() {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">
+              //In non-strict mode, the growUp() function defines `this` // as the
+              global object (because it's where growUp() is executed.), // which is
+              different from the `this` // defined by the Person() constructor.
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">
+              this.age++;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent">
+             }, 1000);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+            } var p = new Person();
+            </p>
+          </code>
+          <p class="main-section__parag">
+            In ECMAScript 3/5, the this issue was fixable by assigning the value
+            in this to a variable that could be closed over.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              function Person() {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              var that = this;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent">
+              that.age = 0;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent
+            main-section__parag--code__sub-code--no-margin">setInterval(function growUp() {</p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">// The callback refers to the `that`
+            variable of which</p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">// the value is the expected object.</p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">that.age++;</p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">},1000);</p>
+            <p class="main-section__parag--code__sub-code">
+              }
+            </p>
+          </code>
+          <p class="main-section__parag">
+            Alternatively, a bound function could be created so that a preassigned
+            this value would be passed to the bound target function (the growUp()
+            function in the example above).
+          </p>
+          <p class="main-section__parag">
+            An arrow function does not have its
+            own this. The this value of the enclosing lexical scope is used; arrow
+            functions follow the normal variable lookup rules. So while searching
+            for this which is not present in current scope, an arrow function ends
+            up finding the this from its enclosing scope.
+          </p>
+          <p class="main-section__parag">
+            Thus, in the following
+            code, the this within the function that is passed to setInterval has
+            the same value as the this in the lexically enclosing function:
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              function Person(){
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent">
+              this.age = 0;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              setInterval(() => { 
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">
+              this.age++; //|this| properly refers to the Person object
+            </p>  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              }, 1000);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              }
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              var p = new Person();
+            </p>
+          </code>
+          <h4 class="main-section__subheadline">
+            Relation with strict mode
+          </h4>
+          <p class="main-section__parag">
+            Given that this comes from the surrounding lexical context, strict
+            mode rules with regard to this are ignored.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var f = () => { 'use strict'; return this; };
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              f() === window; // or the global object
+            </p>
+          </code>
+        </section>
+        <section class="main-section" id="Function_body">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Function body</h2>
+          </header>
+          <p class="main-section__parag">
+            Arrow functions can have either : 
+            <ul class="main-section__parag__list">
+              <li class="main-section__parag__list__items">
+                Concise body
+              </li>
+              <li class="main-section__parag__list__items">
+                Block body
+              </li>
+            </ul>
+          </p>
+          <p class="main-section__parag">
+            In a concise body, only an expression is specified, which
+            becomes the implicit return value. In a block body, you must use an
+            explicit return statement.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var func = x => x * x;
+            </p>
+             <p class="main-section__parag--code__sub-code">
+              // concise body syntax, implied "return"
+             </p>
+             <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var func = (x, y) => { return x + y; };
+             </p>
+             <p class="main-section__parag--code__sub-code">
+              // with block body, explicit "return" needed
+             </p>
+          </code>
+        </section>
+        <section class="main-section" id="Returning_object_literals">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">
+              Returning object literals
+            </h2>
+          </header>
+          <p class="main-section__parag">
+            Keep in mind that returning object literals using the concise body
+            syntax params => {object:literal} will not work as expected.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var func = () => { foo: 1 };
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // Calling func() returns undefined!
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var func = () => { foo: function() {} };
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // SyntaxError: function statement requires a name
+            </p>
+          </code>
+          <p class="main-section__parag">
+            This is because the code inside braces ({}) is parsed as a sequence of
+            statements (i.e. foo is treated like a label, not a key in an object
+            literal).
+          </p>
+          <p class="main-section__parag">
+            You must wrap the object literal in parentheses:
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            var func = () => ({ foo: 1 });
+          </code>
+        </section>
+        <section class="main-section" id="Line_breaks">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Line breaks</h2>
+          </header>
+          <p class="main-section__parag">
+            An arrow function cannot contain a line break between its parameters
+            and its arrow.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var func = (a, b, c)
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--indent
+            main-section__parag--code__sub-code--no-margin">
+              => 1;
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // SyntaxError: expected expression, got '=>'
+            </p>
+          </code>
+          <p class="main-section__parag">
+            However, this can be amended by :
+            <ul class="main-section__parag__list">
+              <li class="main-section__parag__list__items">
+                Putting the line break after the arrow
+              </li>
+              <li class="main-section__parag__list__items">
+                Using parentheses/braces as seen below to ensure that the code
+                stays pretty and fluffy
+              </li>
+              <li class="main-section__parag__list__items">
+                You can also put line breaks between
+                 arguments
+              </li>
+            </ul>
+          </p>
+        </section>
+        <section class="main-section" id="Parsing_order">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Parsing order</h2>
+          </header>
+          <p class="main-section__parag">
+            Although the arrow in an arrow function is not an operator, arrow
+            functions have special parsing rules that interact differently with
+            operator precedence compared to regular functions.
+          </p>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code">
+              let callback;
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              callback = callback || function() {}; // ok
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              callback = callback || () => {};
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // SyntaxError: invalid arrow-function arguments
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              callback = callback || (() => {}); // ok
+            </p>
+          </code>
+        </section>
+        <section class="main-section" id="More_examples">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">More examples</h2>
+          </header>
+          <code class="main-section__parag main-section__parag--code">
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              // An empty arrow function returns undefined
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              let empty = () => {};
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              (() => 'foobar')();
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              // Returns "foobar"
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // (this is an Immediately Invoked Function Expression) 
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var simple = a => a > 15 ? 15 : a;
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              simple(16); //15
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              simple(10); // 10
+            </p>
+  
+            <p class="main-section__parag--code__sub-code">
+              let max = (a, b) => a > b ? a : b;
+            </p>
+  
+            <p class="main-section__parag--code__sub-code">
+              // Easy array filtering, mapping, ...
+            </p>
+  
+            <p class="main-section__parag--code__sub-code">
+              var arr = [5, 6, 13, 0, 1, 18, 23];
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var sum = arr.reduce((a, b) => a + b);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // 66
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var even = arr.filter(v => v % 2 == 0);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // [6, 0, 18]
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              var double = arr.map(v => v * 2);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              // [10, 12, 26, 0, 2, 36, 46]
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              // More concise promise chains
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              promise.then(a => {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              // ...
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              }).then(b => {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              // ...
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              });
+            </p>
+  
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              // Parameterless arrow functions that are visually easier to parse
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin">
+              setTimeout( () => {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              console.log('I happen sooner');
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              setTimeout( () => {
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">
+              // deeper code
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--double-indent">
+              console.log('I happen later');
+            </p>
+            <p class="main-section__parag--code__sub-code main-section__parag--code__sub-code--no-margin
+            main-section__parag--code__sub-code--indent">
+              }, 1);
+            </p>
+            <p class="main-section__parag--code__sub-code">
+              }, 1);
+            </p>
+          </code>
+        </section>
+        <section class="main-section" id="Specifications">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Specifications</h2>
+          </header>
+          <p class="main-section__parag main-section__parag--unique">
+            Specification
+          </p>
+          <p class="main-section__parag main-section__parag--unique-parag">
+            ECMAScript (ECMA-262)
+          </p>
+          <p class="main-section__parag main-section__parag--unique-parag
+          main-section__parag--unique-parag--small">
+            The definition of 'Arrow Function Definitions' in that specification.
+          </p>
+        </section>
+        <section class="main-section" id="Browser_Compatibility">
+          <header class="main-section__header">
+            <h2 class="main-section__header__headline">Browser Compatibility</h2>
+          </header>
+          <table class="main-section__table">
+            <thead>
+              <tr class="main-section__table__bc-platform">
+                <th class="main-section__table__bc-platform__desktop">
+                  <span class="main-section__table__bc-platform__desktop__span">Desktop</span>
+                </th>
+                <th class="main-section__table__bc-platform__mobile">
+                  <span class="main-section__table__bc-platform__mobile__span">Mobile</span>
+                </th>
+                <th class="main-section__table__bc-platform__server">
+                  <span class="main-section__table__bc-platform__server__span">Server</span>
+                </th>
+              </tr>
+              <tr class="main-section__table__bc-browser">
+                <th class="main-section__table__bc-browser__chrome">
+                  <span class="main-section__table__bc-browser__chrome__span">Chrome</span>
+                </th>
+                <th class="main-section__table__bc-browser__edge">
+                  <span class="main-section__table__bc-browser__edge__span">Edge</span>
+                </th>
+                <th class="main-section__table__bc-browser__firefox">
+                  <span class="main-section__table__bc-browser__firefox__span">Firefox</span>
+                </th>
+                <th class="main-section__table__bc-browser__ie">
+                  <span class="main-section__table__bc-browser__ie__span">Internet Explorer</span>
+                </th>
+                <th class="main-section__table__bc-browser__opera">
+                  <span class="main-section__table__bc-browser__opera__span">Opera</span>
+                </th>
+                <th class="main-section__table__bc-browser__safari">
+                  <span class="main-section__table__bc-browser__safari__span">Safari</span>
+                </th>
+                <th class="main-section__table__bc-browser__webview-android">
+                  <span class="main-section__table__bc-browser__webview-android__span">Android Webview</span>
+                </th>
+                <th class="main-section__table__bc-browser__chrome-android">
+                  <span class="main-section__table__bc-browser__chrome-android__span">Chrome for Android</span>
+                </th>
+                <th class="main-section__table__bc-browser__firefox-android">
+                  <span class="main-section__table__bc-browser__firefox-android__span">Firefox for Android</span>
+                </th>
+                <th class="main-section__table__bc-browser__opera-android">
+                  <span class="main-section__table__bc-browser__opera-android__span">Opera for Android</span>
+                </th>
+                <th class="main-section__table__bc-browser__safari-ios">
+                  <span class="main-section__table__bc-browser__safari-ios__span">Safari on iOS</span>
+                </th>
+                <th class="main-section__table__bc-browser__samsunginternet-android">
+                  <span class="main-section__table__bc-browser__samsunginternet-android__span">Samsung Internet</span>
+                </th>
+                <th class="main-section__table__bc-browser__nodejs">
+                  <span class="main-section__table__bc-browser__nodejs__span">Node.js</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="main-section__table__arrow">
+                <th scope="row">Arrow functions</th>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Chrome</span>
+                  <span class="main-section__table__arrow__data__ver">45</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Edge</span>
+                  <span class="main-section__table__arrow__data__ver">12</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Firefox</span>
+                  <span class="main-section__table__arrow__data__ver">22</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--no">
+                  <span class="main-section__table__arrow__data__span">IE</span>
+                  <span class="main-section__table__arrow__data__ver">No</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Opera</span>
+                  <span class="main-section__table__arrow__data__ver">32</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Safari</span>
+                  <span class="main-section__table__arrow__data__ver">10</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">WebView Android</span>
+                  <span class="main-section__table__arrow__data__ver">45</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Chrome Android</span>
+                  <span class="main-section__table__arrow__data__ver">45</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Firefox Android</span>
+                  <span class="main-section__table__arrow__data__ver">22</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Opera Android</span>
+                  <span class="main-section__table__arrow__data__ver">32</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Safari iOS</span>
+                  <span class="main-section__table__arrow__data__ver">10</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">Samsung Internet Android</span>
+                  <span class="main-section__table__arrow__data__ver">5.0</span>
+                </td>
+                <td class="main-section__table__arrow__data main-section__table__arrow__data--yes">
+                  <span class="main-section__table__arrow__data__span">nodejs</span>
+                  <span class="main-section__table__arrow__data__ver">Yes</span>
+                </td>
+              </tr>
+              <tr class="main-section__table__comma">
+                <th scope="row">Trailing comma in parameters</th>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Chrome</span>
+                  <span class="main-section__table__comma__data__ver">58</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Edge</span>
+                  <span class="main-section__table__comma__data__ver">12</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Firefox</span>
+                  <span class="main-section__table__comma__data__ver">52</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--no">
+                  <span class="main-section__table__comma__data__span">IE</span>
+                  <span class="main-section__table__comma__data__ver">No</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Opera</span>
+                  <span class="main-section__table__comma__data__ver">45</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Safari</span>
+                  <span class="main-section__table__comma__data__ver">10</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">WebView Android</span>
+                  <span class="main-section__table__comma__data__ver">58</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Chrome Android</span>
+                  <span class="main-section__table__comma__data__ver">58</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Firefox Android</span>
+                  <span class="main-section__table__comma__data__ver">52</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Opera Android</span>
+                  <span class="main-section__table__comma__data__ver">43</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Safari iOS</span>
+                  <span class="main-section__table__comma__data__ver">10</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">Samsung Internet Android</span>
+                  <span class="main-section__table__comma__data__ver">7.0</span>
+                </td>
+                <td class="main-section__table__comma__data main-section__table__comma__data--yes">
+                  <span class="main-section__table__comma__data__span">nodejs</span>
+                  <span class="main-section__table__comma__data__ver">Yes</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="main-section__signal-link">
+            <hr class="main-section__signal-link__hr">
+            <a href="#0" class="main-section__signal-link__text">What are we missing?</a>
+          </div>
+          <dl class="main-section__table-legend">
+            <dt class="main-section__table-legend__term-supported"></dt>
+            <dd class="main-section__table-legend__definition-supported">Full support</dd>
+            
+            <dt class="main-section__table-legend__term-nosupport"></dt>
+            <dd class="main-section__table-legend__definition-nosupport">No support</dd>
+            
+            <!-- <dt class="main-section__table-legend__term-supported"></dt>
+            <dd class="main-section__table-legend__definition-supported">Full support</dd> -->
+          </dl>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-wrapper">
+        <a href="#0" class="footer__logo">
+          <img src="assets/logo-footer.svg" alt="logo footer">
+        </a>
+        <nav class="footer__main-nav">
+          <ul>
+            <li><a class="footer__main-nav__items" href="#0">Web Technologies</a></li>
+            <li><a class="footer__main-nav__items" href="#0"></a>Learn Web Development</li>
+            <li><a class="footer__main-nav__items" href="#0">About MDN</a></li>
+            <li><a class="footer__main-nav__items" href="#0">Feedback</a></li>
+            <li><a class="footer__main-nav__items" href="#0">About</a></li>
+            <li><a class="footer__main-nav__items" href="#0">Contact Us</a></li>
+            <li><a class="footer__main-nav__items" href="#0">Firefox</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__social-media">
+          <div class="footer__social-media__mdn">
+            MDN
+            <ul>
+              <li>
+                <a class="footer__social-media__items" href="#0">
+                  <svg class="footer__social-media__items__icon" xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+                    <path d="M25.312 6.375a10.85 10.85 0 01-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 
+                      14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 
+                      6.266-2.156a5.056 5.056 0 01-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 
+                      5.048 0 01-4.047-4.953v-.063a5.093 5.093 0 002.281.641 5.044 5.044 0 
+                      01-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0010.406 5.281 5.708 5.708 0 
+                      01-.125-1.156 5.045 5.045 0 015.047-5.047 5.03 5.03 0 013.687 1.594 9.943 9.943 0 003.203-1.219 
+                      5.032 5.032 0 01-2.219 2.781c1.016-.109 2-.391 2.906-.781z">
+                    </path>
+                  </svg>
+               </a>
+              </li>
+              <li>
+                <a class="footer__social-media__items" href="#0">
+                  <svg class="footer__social-media__items__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" 
+                    aria-label="GitHub" role="img" focusable="false">
+                    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 
+                      11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 
+                      2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 
+                      1.234-3.297 1.234a11.28 11.28 0 00-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 
+                      3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 
+                      1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 
+                      1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 
+                      .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 
+                      19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 
+                      0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 
+                      0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z">
+                    </path>
+                  </svg>
+               </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__social-media__moz">
+            Mozilla
+            <ul>
+              <li>
+                <a class="footer__social-media__items" href="#0">
+                  <svg class="footer__social-media__items__icon" xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+                    <path d="M25.312 6.375a10.85 10.85 0 01-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 
+                      14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 
+                      6.266-2.156a5.056 5.056 0 01-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 
+                      5.048 0 01-4.047-4.953v-.063a5.093 5.093 0 002.281.641 5.044 5.044 0 
+                      01-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0010.406 5.281 5.708 5.708 0 
+                      01-.125-1.156 5.045 5.045 0 015.047-5.047 5.03 5.03 0 013.687 1.594 9.943 9.943 0 003.203-1.219 
+                      5.032 5.032 0 01-2.219 2.781c1.016-.109 2-.391 2.906-.781z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__social-media__items" href="#0">
+                  <svg class="footer__social-media__items__icon" xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 28" aria-label="Instagram" role="img" focusable="false">
+                    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm2.156 
+                      0c0 3.406-2.75 6.156-6.156 6.156S5.844 17.406 5.844 14 8.594 7.844 12 7.844s6.156 
+                      2.75 6.156 6.156zm1.688-6.406c0 .797-.641 1.437-1.437 1.437S16.97 8.39 16.97 7.594s.641-1.437 
+                      1.437-1.437 1.437.641 1.437 1.437zM12 4.156c-1.75 0-5.5-.141-7.078.484-.547.219-.953.484-1.375.906s-.688.828-.906 
+                      1.375c-.625 1.578-.484 5.328-.484 7.078s-.141 5.5.484 7.078c.219.547.484.953.906 1.375s.828.688 
+                      1.375.906c1.578.625 5.328.484 7.078.484s5.5.141 7.078-.484c.547-.219.953-.484 
+                      1.375-.906s.688-.828.906-1.375c.625-1.578.484-5.328.484-7.078s.141-5.5-.484-7.078c-.219-.547-.484-.953-.906-1.375s-.828-.688-1.375-.906C17.5 
+                      4.015 13.75 4.156 12 4.156zM24 14c0 1.656.016 3.297-.078 4.953-.094 1.922-.531 3.625-1.937 5.031s-3.109 
+                      1.844-5.031 1.937c-1.656.094-3.297.078-4.953.078s-3.297.016-4.953-.078c-1.922-.094-3.625-.531-5.031-1.937S.173 
+                      20.875.08 18.953C-.014 17.297.002 15.656.002 14s-.016-3.297.078-4.953c.094-1.922.531-3.625 1.937-5.031s3.109-1.844 
+                      5.031-1.937c1.656-.094 3.297-.078 4.953-.078s3.297-.016 4.953.078c1.922.094 3.625.531 5.031 1.937s1.844 
+                      3.109 1.937 5.031C24.016 10.703 24 12.344 24 14z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <p class="copyrights">
+          &#169; 2005-2020 Mozilla and individual contributors. Content is available under these licences.
+        </p>
+        <nav class="footer__nav-terms">
+          <ul>
+            <li><a href="#0" class="footer__nav-terms__items">Terms</a></li>
+            <li><a href="#0" class="footer__nav-terms__items">Privacy</a></li>
+            <li><a href="#0" class="footer__nav-terms__items">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
